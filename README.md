@@ -13,3 +13,9 @@ clock, no randomness beyond the fixed Zobrist seed, no model calls.
 
 Local practice trials (6 games each, vs depth-2..nodes-500k gauntlet):
 trial-0 3.0/6, trial-1 1.5/6, trial-2 1.5/6; mean practice Elo ~1,099.
+
+Revision (commit 95008c8): root PV-move ordering (the previous iteration's
+best move is tried first at the next depth) and killer-first quiescence
+(killer moves ordered before MVV-LVA captures). Perft unchanged (start
+position 20 / 400 / 8,902); practice trials after the change: 1.5/6 and
+2.0/6, mean ~1,048 Elo — ordering-only, no clear change either way.
